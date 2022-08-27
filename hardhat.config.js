@@ -1,6 +1,7 @@
 
 
 require("@nomiclabs/hardhat-waffle");
+// require("@nomiclabs/hardhat-etherscan");
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -20,11 +21,22 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
  */
 module.exports = {
   solidity: "0.8.4",
+  etherscan: {
+    // Your API key for Etherscan
+    // Obtain one at https://etherscan.io/
+    apiKey: ""
+  },
   networks: {
     ropsten: {
-      url: "https://ropsten.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161",
-      chainId: 3,
-      accounts: ['c91eec8baa8640f6b93aab08176ea0d87d22df8780e59e623f7602905195a99c']
+      url: "https://matic-mumbai.chainstacklabs.com",
+      chainId: 80001,
+      accounts: ['']
+    },
+    bscTest: {
+      url: "https://data-seed-prebsc-1-s1.binance.org:8545",
+      chainId: 97,
+      timeout: 200000,
+      accounts: [""],
     },
   },
 };
